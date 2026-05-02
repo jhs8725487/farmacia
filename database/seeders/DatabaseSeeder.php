@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             AjusteSeeder::class,
             SucursalSeeder::class,
             EmpleadoSeeder::class,
+            CategoriaSeeder::class,
         ]);
 
         $admin = User::firstOrCreate(

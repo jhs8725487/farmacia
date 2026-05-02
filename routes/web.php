@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Auth;
@@ -39,3 +40,16 @@ Route::get('/admin/empleados', [App\Http\Controllers\EmpleadoController::class, 
 Route::post('/admin/empleados/create', [App\Http\Controllers\EmpleadoController::class, 'store'])->name('admin.empleados.store')->middleware('auth');
 Route::put('/admin/empleados/{id}', [App\Http\Controllers\EmpleadoController::class, 'update'])->name('admin.empleados.update')->middleware('auth');
 Route::delete('/admin/empleados/{id}', [App\Http\Controllers\EmpleadoController::class, 'destroy'])->name('admin.empleados.destroy')->middleware('auth');
+
+// Rutas para categorías
+Route::get('/admin/categorias', [App\Http\Controllers\CategoriaController::class, 'index'])
+    ->name('admin.categorias.index')->middleware('auth');
+
+Route::post('/admin/categorias/create', [App\Http\Controllers\CategoriaController::class, 'store'])
+    ->name('admin.categorias.store')->middleware('auth');
+
+Route::put('/admin/categorias/{categoria}', [App\Http\Controllers\CategoriaController::class, 'update'])
+    ->name('admin.categorias.update')->middleware('auth');
+
+Route::delete('/admin/categorias/{categoria}', [App\Http\Controllers\CategoriaController::class, 'destroy'])
+    ->name('admin.categorias.destroy')->middleware('auth');
