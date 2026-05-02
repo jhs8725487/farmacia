@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             SucursalSeeder::class,
             EmpleadoSeeder::class,
             CategoriaSeeder::class,
+            LaboratorioSeeder::class,
+            ProductoSeeder::class,
         ]);
 
         $admin = User::firstOrCreate(

@@ -117,10 +117,18 @@
                             </li>
 
 
+
                             <li class="sidebar-item {{ request()->routeIs('admin.categorias.*') ? 'active' : '' }}">
                                 <a href="{{ route('admin.categorias.index') }}" class='sidebar-link'>
                                     <i class="bi bi-tags"></i>
                                     <span>Categorías</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item {{ request()->routeIs('admin.productos.*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.productos.index') }}" class='sidebar-link'>
+                                    <i class="bi bi-capsule"></i>
+                                    <span>Productos</span>
                                 </a>
                             </li>
 

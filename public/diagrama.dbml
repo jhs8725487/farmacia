@@ -56,10 +56,16 @@ Table categorias {
   nombre varchar(150) [not null, unique]
 }
 
+Table laboratorios {
+  id int [pk, increment]
+  nombre varchar(150) [not null, unique]
+}
+
 Table productos {
   id int [pk, increment]
 
   categoria_id int [ref: > categorias.id]
+  laboratorio_id int [ref: > laboratorios.id]
 
   codigo_producto varchar(50) [unique, not null]
   codigo_barra varchar(50) [unique, null]
@@ -71,7 +77,6 @@ Table productos {
   accion_terapeutica varchar(255)
   unidad_medida varchar(50)
   usa_receta boolean [not null, default: false]
-  laboratorio varchar(150)
   imagen varchar(255) [null]
 }
 

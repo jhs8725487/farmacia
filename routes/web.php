@@ -53,3 +53,22 @@ Route::put('/admin/categorias/{categoria}', [App\Http\Controllers\CategoriaContr
 
 Route::delete('/admin/categorias/{categoria}', [App\Http\Controllers\CategoriaController::class, 'destroy'])
     ->name('admin.categorias.destroy')->middleware('auth');
+
+    // Rutas para productos
+use App\Http\Controllers\ProductoController;
+
+// INDEX
+Route::get('/admin/productos', [ProductoController::class, 'index'])
+    ->name('admin.productos.index')->middleware('auth');
+
+// STORE
+Route::post('/admin/productos/create', [ProductoController::class, 'store'])
+    ->name('admin.productos.store')->middleware('auth');
+
+// UPDATE
+Route::put('/admin/productos/{id}', [ProductoController::class, 'update'])
+    ->name('admin.productos.update')->middleware('auth');
+
+// DELETE
+Route::delete('/admin/productos/{id}', [ProductoController::class, 'destroy'])
+    ->name('admin.productos.destroy')->middleware('auth');
